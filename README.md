@@ -18,6 +18,10 @@ Antes de meter as mãos no Cypress. E visto não haver requisitos de desenvolvim
 
 ### 3 - Casos de criação de utilizador
 Para o caso de Criação de user. Visto não ser possível apagar o utilizador. Um caso de teste possível com dois cenários.
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 | Path  | Caso de teste                                               |
 | Happy | Testar a criação de um utilizador não existente             |
 | Sad   | Testar a criação de um utilizador com um email já existente |

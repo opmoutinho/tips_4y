@@ -42,6 +42,9 @@ Para as contas optei por fazer a validação CRUD, testando o circuito completo 
 | Sad   | Criar conta com o nome de uma conta já existente      | Aceitação |
 | Sad   | Editar uma conta com o nome de uma conta já existente | Aceitação |
 
+[^2]
+[^2]: A optimização dos casos de teste não é a melhor devido às limitações da solução. De modo a conseguir realizar os testes de maneira mais eficiente, seria necessário conseguir recolher o ID enviado pela criação do movimento e pela criação da conta. Ou então um atributo que permitisse encontrar a td correspondeste à conta movimento pretendido. Para não ter de ser feita uma navegação hardcoded e o elemento ser encontrado de forma dinâmica.
+
 ### 6 - Movimentação
 Para este caso precisei de criar uma árvore de decisão. De modo a conseguir validar se não todos os caminhos possíveis, pelo menos os mais relevantes.
 | Path  | Caso de teste          | Tipo de teste                                      |
@@ -53,12 +56,12 @@ Para este caso precisei de criar uma árvore de decisão. De modo a conseguir va
 | Sad   | Criar uma Despesa sem dados                                     | Aceitação |
 | Sad   | Criar uma Receita sem dados                                     | Aceitação |
 
-[^2]
 [^3]
 [^4]
-[^2]: Optei por não realizar os testes de validação nos campos de entrada obrigatórios por se tornarem redudantes.
-[^3]: Obs. Em termos de UX. As datas deveriam ser seletores de datas com as limitações da plataforma. Visto que é possível inserir qualquer data desde que tenha o formato correto. Mas apenas é possível pesquisar entre dia 01/01/2010 e 31/12/2030. Isto levanta um BUG no saldo da conta.
-[^4]: É possível introduzir valores negativos no campo do valor. Podendo dificultar ou adulterar o processo de cálculo.
+[^5]
+[^3]: Optei por não realizar os testes de validação nos campos de entrada obrigatórios por se tornarem redudantes.
+[^4]: Obs. Em termos de UX. As datas deveriam ser seletores de datas com as limitações da plataforma. Visto que é possível inserir qualquer data desde que tenha o formato correto. Mas apenas é possível pesquisar entre dia 01/01/2010 e 31/12/2030. Isto levanta um BUG no saldo da conta.
+[^5]: É possível introduzir valores negativos no campo do valor. Podendo dificultar ou adulterar o processo de cálculo.
 
 ### 7 - Home - Listagem de contas e saldo
 Circuito de adicionar despesas e receitas, e visualização das mesmas na conta correta na página home.

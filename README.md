@@ -14,42 +14,44 @@ Internamente, a equipa de QA Testers da TIPS 4Y, tem usado a ferramenta Cypress 
 Como nunca tinha trabalhado com cypress o primeiro obstáculo foi fazer a configuração. O desafio real foi desbravar a [documentação](https://docs.cypress.io/guides/getting-started/installing-cypress#npm-install).
 
 ### 2 - Primeiras observações
-Antes de meter as mãos no Cypress. E visto não haver requisitos de desenvolvimento foi necessário conhecer um pouco as funcionalidades da aplicação antes de escrver os casos de testes. Primeiramente criei um usuário para saber se era possível fazer testes à funcionalidade de CRUD relativamente ao usuário. Reparei que apenas daria para criar um e anotei que esse seria um dos testes possíveis dentro do login. Talve quiçá dividir entre um testes de criação e um teste de circuito de login simples para começar.
+Antes de meter as mãos no Cypress. E visto não haver requisitos de desenvolvimento foi necessário conhecer um pouco as funcionalidades da aplicação antes de escrever os casos de testes. Após conhecer a aplicação e as funcionalidades, levantei os seguintes casos de teste.
 
 ### 3 - Casos de criação de utilizador
-Para o caso de Criação de user. Visto não ser possível apagar o utilizador. Um caso de teste possível com dois cenários.
-| Path  | Caso de teste                                               |
-| ----------- | ------------                                          |
-| Happy | Testar a criação de um utilizador não existente             |
-| Sad   | Testar a criação de um utilizador com um email já existente |
+Para o caso de Criação de user. Visto não ser possível apagar o utilizador. Dois casos de testes. Um em que o utilizador é criado com sucesso e outro onde isso não acontece. 
+
+| Path  | Caso de teste          | Tipo de teste                                      |
+| ----------- | ------------                                          |   ----------- |
+| Happy | Testar a criação de um utilizador não existente             | Aceitação |
+| Sad   | Testar a criação de um utilizador com um email já existente | Aceitação |
 
 [^1]
 [^1]: Para o caso de teste happy é necessário atualizar o ficheiro - tips_4y\resources\inputs.json com um novo e-mail.
 
 ### 4 - LoginLogout
 Teste simples que valida o circuito de login e logout na aplicação.
-| Path  | Caso de teste                                    |
-| Happy | Testar o circuito de login - logout da aplicação |
+| Path  | Caso de teste          | Tipo de teste                |
+| ----------- | ------------                   |   ----------- |
+| Happy | Testar o circuito de login - logout da aplicação | Integração |
 
 ### 5 - CRUD Contas
 Para as contas optei por fazer a validação CRUD, testando o circuito completo de criar uma conta sendo este o happy path. E testando dois Sad Paths em que tento criar e editar uma conta para um nome já existente.
-| Path  | Caso de teste                                               |
-| ----------- | ------------                                          |
-| Happy | Validação CRUD de uma conta                           |
-| Happy | Tentar apagar uma conta com movimentos                |
-| Sad   | Criar conta com o nome de uma conta já existente      |
-| Sad   | Editar uma conta com o nome de uma conta já existente |
+| Path  | Caso de teste          | Tipo de teste                                      |
+| ----------- | ------------                                          |   ----------- |
+| Happy | Validação CRUD de uma conta                           | Integração |
+| Happy | Tentar apagar uma conta com movimentos                | (Aceitação se fosse com mocks) Integração|
+| Sad   | Criar conta com o nome de uma conta já existente      | Aceitação |
+| Sad   | Editar uma conta com o nome de uma conta já existente | Aceitação |
 
 ### 6 - Movimentação
 Para este caso precisei de criar uma árvore de decisão. De modo a conseguir validar se não todos os caminhos possíveis, pelo menos os mais relevantes.
-| Path  | Caso de teste                                               |
-| ----------- | ------------                                          |
-| Happy | Criação de uma Receita (com todos os campos válidos) e Paga     |
-| Happy | Criação de uma Receita (com todos os campos válidos) e Pendente |
-| Happy | Criação de uma Despesa (com todos os campos válidos) e Paga     |
-| Happy | Criação de uma Despesa (com todos os campos válidos) e Pendente |
-| Sad   | Criar uma Despesa sem dados                                     |
-| Sad   | Criar uma Receita sem dados                                     |
+| Path  | Caso de teste          | Tipo de teste                                      |
+| ----------- | ------------                                          |   ----------- |
+| Happy | Criação de uma Receita (com todos os campos válidos) e Paga     | Aceitação |
+| Happy | Criação de uma Receita (com todos os campos válidos) e Pendente | Aceitação |
+| Happy | Criação de uma Despesa (com todos os campos válidos) e Paga     | Aceitação |
+| Happy | Criação de uma Despesa (com todos os campos válidos) e Pendente | Aceitação |
+| Sad   | Criar uma Despesa sem dados                                     | Aceitação |
+| Sad   | Criar uma Receita sem dados                                     | Aceitação |
 
 [^2]
 [^3]
@@ -60,12 +62,12 @@ Para este caso precisei de criar uma árvore de decisão. De modo a conseguir va
 
 ### 7 - Home - Listagem de contas e saldo
 Circuito de adicionar despesas e receitas, e visualização das mesmas na conta correta na página home.
-| Path  | Caso de teste                                               |
-| ----------- | ------------                                          |
-| Happy | Criação de Receitas e despesas para a Conta1 e Conta 2, valores corretos no Home     |
+| Path  | Caso de teste          | Tipo de teste                                      |
+| ----------- | ------------                                          |   ----------- |
+| Happy | Criação de Receitas e despesas para a Conta1 e Conta 2, valores corretos no Home     | Integração|
 
 ### 8 - Resumo Mensal
 Listagem das despesas criadas por conta no Resumo Mensal
-| Path  | Caso de teste                                               |
-| ----------- | ------------                                          |
-| Happy | Seleção de um mês no Resumo Mensal para vizualição das contas |
+| Path  | Caso de teste          | Tipo de teste                                      |
+| ----------- | ------------                                          |   ----------- |
+| Happy | Seleção de um mês no Resumo Mensal para vizualição das contas | Aceitação |

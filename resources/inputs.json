@@ -2,5 +2,43 @@
     "name":"Jorge Guerreiro",
     "email":"randomMails9087@mail.com",
     "pass":"pass1234"
+},
+"accounts":{
+    "accountBasic":"Basic",
+    "accountFlex":"Flex"
+},
+"movements":{
+    "movementRecPago":{"movementType":"REC",
+                 "movementDate":"30/10/2020",
+                 "payDay":"10/11/2020",
+                 "description":"Mais Valias",
+                 "interested":"Jorge Guerreiro",
+                 "value":"200",
+                 "account":"Flex",
+                 "status":"pago"},
+    "movementRecPend":{"movementType":"REC",
+                 "movementDate":"30/10/2021",
+                 "payDay":"10/11/2021",
+                 "description":"Mais Valias",
+                 "interested":"Jorge Guerreiro",
+                 "value":"200",
+                 "account":"Flex",
+                 "status":"pendente"},
+    "movementDesPend":{"movementType":"DESP",
+                 "movementDate":"30/10/2021",
+                 "payDay":"10/11/2021",
+                 "description":"Despesas de Deslocação",
+                 "interested":"Jorge Guerreiro",
+                 "value":"120",
+                 "account":"Flex",
+                 "status":"pendente"},
+    "movementDesPago":{"movementType":"DESP",
+                 "movementDate":"30/10/2020",
+                 "payDay":"10/11/2020",
+                 "description":"Despesas de Deslocação",
+                 "interested":"Jorge Guerreiro",
+                 "value":"120",
+                 "account":"Flex",
+                 "status":"pago"}
 }
 }
